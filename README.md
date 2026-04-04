@@ -66,7 +66,7 @@ By default, setup-android installs version 14742923 (short version 20.0).
 To install a different version, call setup-android with desired long version as the input parameter `cmdline-tools-version`:
 ```yaml
 - name: Setup Android SDK
-  uses: android-actions/setup-android@v3
+  uses: android-actions/setup-android@v4
   with:
     cmdline-tools-version: 8512546
 ```
