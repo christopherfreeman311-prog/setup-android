@@ -32,7 +32,7 @@ steps:
     distribution: 'temurin'
 
 - name: Setup Android SDK
-  uses: android-actions/setup-android@v3
+  uses: android-actions/setup-android@v4
 
 - name: Build SampleApplication
   run: ./gradlew --no-daemon build
@@ -47,7 +47,7 @@ Additional packages can be installed at a later time by calling sdkmanager manua
 
 ```yaml
 - name: Setup Android SDK
-  uses: android-actions/setup-android@v3
+  uses: android-actions/setup-android@v4
   with:
     packages: ''
 
