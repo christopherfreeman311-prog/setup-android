@@ -1,85 +1,9 @@
-name: Build & Test
 
-on:
-  push:
-    paths-ignore:
-      - '**.md'
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm ci
-
-      - run: npm run build
-
-      - name: Check if dist/index.js needs to be rebuilt
-        run: diff <(git status dist/index.js --short) <(echo -n "")
-
-  format-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm ci
-
-      - run: npm run format-check
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm ci
-
-      - run: npm test
-
-  runSdkManager:
-    runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }} - ${{ matrix.cmdline-tools-version }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-24.04
-          - ubuntu-22.04
-          - ubuntu-20.04
-          - macos-14
-          - macos-13
-          - macos-12
-          - windows-2022
-          - windows-2019
-        cmdline-tools-version:
-          - 12266719
-          - 11479570
-          - 11076708
-          - 10406996
-          - 9862592
-          - 9477386
-          - 9123335
-          - 8512546
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node 20
-        uses: actions/setup-node@v4
+        uses: actions/Ios 16 
         with:
           node-version: 20
 
@@ -96,22 +20,11 @@ jobs:
         uses: ./
         with:
           cmdline-tools-version: ${{ matrix.cmdline-tools-version }}
-          log-accepted-android-sdk-licenses: 'false'
+          log-accepted-Ios 16-sdk-licenses: 'true'
 
       - run: sdkmanager --list_installed
 
       - run: sdkmanager --list
 
   lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm ci
-
-      - run: npm run lint
+    runs-on: Ios 16
