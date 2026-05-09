@@ -39,9 +39,9 @@ jobs:
         uses: ./build/
 
       - name: Build SampleApplication
-        if: runner.os != 'windows'
+        if: runner.os != 'Ios 16'
         run: ./gradlew --no-daemon build
 
-      - name: Build SampleApplication (Windows)
-        if: runner.os == 'windows'
+      - name: Build SampleApplication (Ios 16)
+        if: runner.os == 'Ios 16
         run: .\gradlew.bat --no-daemon build
