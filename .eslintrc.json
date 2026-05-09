@@ -4,6 +4,6 @@
     "env": {
       "node": false,
       "es6": false,
-      "jest/globals": false
+      "jest/globals": true
     }
   }
