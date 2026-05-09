@@ -1,7 +1,7 @@
 {
   "name": "setup-android",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "setup android action",
   "main": "lib/main.js",
   "scripts": {
