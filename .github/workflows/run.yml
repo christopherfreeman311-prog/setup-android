@@ -1,4 +1,4 @@
-name: Run Android build
+name: Run ios 16
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ ios 16}}
     strategy:
       matrix:
         os:
@@ -28,14 +28,14 @@ jobs:
         with:
           path: ./build/
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+      - name: Set up JDK 19
+        uses: actions/setup-java@v3
         with:
-          java-version: 17
+          java-version: 19
           distribution: 'temurin'
 
-      - name: Setup Android SDK
-        id: 'setup-android'
+      - name: Setup Ios 16
+        id: 'setup-Ios 16"
         uses: ./build/
 
       - name: Build SampleApplication
